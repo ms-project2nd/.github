@@ -44,6 +44,35 @@ AI 문제 풀이에서 틀린 문제는 자동으로 '오답 노트'에 기록�
 <img width="1920" height="1080" alt="KakaoTalk_20250910_162352932_10" src="https://github.com/user-attachments/assets/4e9357ac-837e-4449-b81c-7877677d0368" />
 
 
+## 📊 모델 성능 평가 (Model Performance)
+
+AI 요약 모델과 RAG 기반 문제 출제 모델의 성능을 객관적인 지표로 측정하여 서비스의 품질을 검증했습니다.
+
+### 성능 측정 결과
+<img width="1920" height="1080" alt="KakaoTalk_20250910_164058170" src="https://github.com/user-attachments/assets/78e0ee31-65bb-49c3-994e-fc0c906563ac" />
+
+
+### 주요 성과 지표
+
+#### AI 요약 구현 개요
+- **ROUGE-L F1 Score**: 생성된 요약의 정답 요약과 얼마나 유사한지 수치화한 지표
+  - Test 1: **0.667** - 높은 요약 정확도 달성
+  - Test 2: **0.6957** - 지속적인 성능 개선 확인
+
+#### 문제 출제 (RAG) 모델  
+- **Precision@5**: 검색 결과 상위 5개 중 정답의 포함률 확률
+  - Baseline: 0.9 → **Scored: 0.95** (5.6% 향상)
+- **MRR (Mean Reciprocal Rank)**: 정답 문서가 검색 결과에서 얼마나 상위에 노출되는지 나타내는 지표
+  - Baseline: 0.741 → **Scored: 0.787** (6.2% 향상)
+
+### 핵심 성과
+- **요약 품질**: ROUGE-L F1 점수 0.69 이상으로 높은 요약 정확도 확보
+- **검색 정확도**: RAG 모델의 Precision@5가 95%로 우수한 문제 출제 품질 달성
+- **랭킹 개선**: MRR 지표에서 베이스라인 대비 6.2% 성능 향상
+
+> 📈 **Azure AI Search 기반 RAG 모델과 최적화된 요약 알고리즘을 통해 신뢰할 수 있는 학습 서비스를 구현했습니다.**
+
+
 
 ### 전체 시스템 아키텍처
 
@@ -59,6 +88,14 @@ AI 문제 풀이에서 틀린 문제는 자동으로 '오답 노트'에 기록�
 <img width="1920" height="1080" alt="KakaoTalk_20250910_162352932_13" src="https://github.com/user-attachments/assets/35417648-8f14-4373-a37c-039fa908ee7e" />
 
 <img width="1920" height="1080" alt="KakaoTalk_20250910_162352932_14" src="https://github.com/user-attachments/assets/615f2a3b-7db8-4133-96dd-2ce9c6000067" />
+
+
+
+## 🎥 시연 영상 (Demo Video)
+
+[![한국사기꾼 시연 영상](https://img.youtube.com/vi/21AjsP_mD0w/0.jpg)](https://youtube.com/shorts/21AjsP_mD0w)
+
+
 
 ## 🚀 향후 발전 방향 (Future Plans)
 
