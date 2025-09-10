@@ -1,17 +1,9 @@
-
-
-
 # 한국史記꾼 (Hanguk Sagi-kkun)
 
 AI 기반 **맞춤형 한국사 학습 플랫폼**  
 **필기 이미지 → 요약 → 음성 → 문제 풀이 → 오답 복습까지 한 번에!**
 
----
-
-
-
-![image](https://github.com/user-attachments/assets/d34d7d52-f9bb-4f1f-9431-76d6bf379066)
-
+<img width="1920" height="1080" alt="KakaoTalk_20250910_162352932" src="https://github.com/user-attachments/assets/5a4d4628-11b0-4eb4-aa43-13c1cb92b885" />
 
 
 
