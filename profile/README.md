@@ -1,140 +1,79 @@
-# 한국史記꾼 (Hanguk Sagi-kkun)
+# 📖 한국사기꾼 (韓國史記꾼) - 맞춤형 한국사 AI 학습 서비스
 
-AI 기반 **맞춤형 한국사 학습 플랫폼**  
-**필기 이미지 → 요약 → 음성 → 문제 풀이 → 오답 복습까지 한 번에!**
-
-<img width="1920" height="1080" alt="KakaoTalk_20250910_162352932" src="https://github.com/user-attachments/assets/5a4d4628-11b0-4eb4-aa43-13c1cb92b885" />
+<img width="1920" height="1080" alt="KakaoTalk_20250910_162352932" src="https://github.com/user-attachments/assets/24b435cd-30ed-41ef-9096-a4419bc995cb" />
 
 
+'한국사기꾼'은 AI 기술을 활용하여 사용자 맞춤형 한국사 학습 경험을 제공하는 웹 애플리케이션입니다. 직접 필기한 노트를 업로드하면 AI가 핵심 내용을 요약하고 음성(TTS)으로 변환해주어, 언제 어디서든 쉽고 재미있게 학습할 수 있도록 돕습니다.
 
 
-## 📌 프로젝트 개요
+## ✨ 주요 기능 (Features)
 
-**한국史記꾼**은 한국사능력검정시험 수험생과 직장인 학습자를 위한  
-AI 기반 한국사 학습 서비스입니다.
+### 🧠 AI 요약 및 TTS 변환
+사용자가 직접 필기한 학습 노트를 이미지로 업로드하면, AI(OCR, RAG)가 내용을 인식하고 핵심만 요약하여 텍스트와 음성 파일(TTS)로 제공합니다.
 
-**출퇴근길이나 자투리 시간**에도  
-**귀로 듣고, 문제를 풀고, 반복 학습할 수 있는 환경**을 제공하기 위해 개발되었습니다.
+### 📝 시대별 맞춤 문제 생성
+원하는 한국사 시대를 선택하면, AI가 해당 범위 내에서 맞춤형 문제를 출제하여 실전 감각을 키울 수 있도록 돕습니다.
 
----
+### ✅ 오답 노트 자동화
+AI 문제 풀이에서 틀린 문제는 자동으로 '오답 노트'에 기록되어, 취약한 부분을 집중적으로 반복 학습할 수 있습니다.
 
-## 🎯 주요 기능
+### ⭐ 오늘의 위인
+매일 접속 시 한국사의 중요 인물을 랜덤으로 소개해 학습 동기를 부여하고 역사 상식을 넓혀줍니다.
 
-| 기능명 | 설명 |
-|--------|------|
-| 🧠 AI 요약 + 음성 변환 (TTS) | 필기 이미지 업로드 → 요약 → Azure TTS로 음성 생성 |
-| 📝 AI 문제 생성 | 시대별 맞춤형 객관식 문제 자동 생성 및 해설 제공 |
-| ❌ 오답노트 관리 | 틀린 문제 자동 저장 → 카테고리별 복습 지원 |
-| 👤 오늘의 위인 | 매일 한국사 인물과 업적을 랜덤 팝업으로 제공 |
+## 🛠️ 기술 스택 (Tech Stack)
 
----
+### Frontend
+- React.js
+- CSS3/HTML5
+- Responsive Design
 
-## 👥 주요 대상 사용자
+### Backend & AI
+- Python
+- FastAPI
+- OpenAI GPT API
+- OCR (Optical Character Recognition)
+- RAG (Retrieval-Augmented Generation)
+- TTS (Text-to-Speech)
 
-- **직장인 학습자**: 이동 중 이어폰으로 한국사 요약 듣기  
-- **수험생**: 다양한 문제 풀이와 오답노트 기반 효율적 복습
+## ⚙️ 시스템 아키텍처 (System Architecture)
 
----
+서비스의 전체 기술 구조와 AI 모델의 데이터 처리 흐름은 다음과 같습니다.
 
-## 🧩 기술 스택
+<img width="1920" height="1080" alt="KakaoTalk_20250910_162352932_09" src="https://github.com/user-attachments/assets/dd590e24-a018-4b1e-af91-32007eedec60" />
 
-| 분류 | 기술 |
-|------|------|
-| 프론트엔드 | React, Gradio, SCSS, Creatie 디자인 툴 |
-| 백엔드 | FastAPI, Python, RESTful API |
-| AI 서비스 | Azure AI Search (RAG), Azure OpenAI GPT-4o, Azure TTS |
-| 데이터 저장 | Azure MySQL, Azure Blob Storage |
-| 배포/자동화 | GitHub Actions + Azure Web App (CI/CD) |
+<img width="1920" height="1080" alt="KakaoTalk_20250910_162352932_10" src="https://github.com/user-attachments/assets/4e9357ac-837e-4449-b81c-7877677d0368" />
 
----
 
-## 🗂️ 프로젝트 구조 (프론트엔드 기준)
 
-```
-my-app/
-├── public/
-├── src/
-│   ├── API/                 # API 호출 관리
-│   ├── components/          # 탭별 UI 구성
-│   ├── styles/              # SCSS/CSS 스타일
-│   └── index.js             # 진입점
-```
+### 전체 시스템 아키텍처
 
----
+<img width="1920" height="1080" alt="KakaoTalk_20250910_162352932_08" src="https://github.com/user-attachments/assets/3b9054e1-964a-4105-8083-d23aeb353d3e" />
 
-## 🚀 설치 및 실행
 
-```bash
-# 1. 클론
-git clone https://github.com/your-org/hanguk-sagikkun.git
-cd hanguk-sagikkun/my-app
+## 📱 서비스 화면 (Screenshots)
 
-# 2. 패키지 설치
-npm install
+<img width="1920" height="1080" alt="KakaoTalk_20250910_162352932_12" src="https://github.com/user-attachments/assets/25f27721-125e-4cde-9716-975aeefea035" />
 
-# 3. 개발 서버 실행
-npm start
-```
+<img width="1920" height="1080" alt="KakaoTalk_20250910_162352932_413" src="https://github.com/user-attachments/assets/7d3d54dd-880f-4555-b41d-6c9bfe05a596" />
+
+<img width="1920" height="1080" alt="KakaoTalk_20250910_162352932_13" src="https://github.com/user-attachments/assets/35417648-8f14-4373-a37c-039fa908ee7e" />
+
+<img width="1920" height="1080" alt="KakaoTalk_20250910_162352932_14" src="https://github.com/user-attachments/assets/615f2a3b-7db8-4133-96dd-2ce9c6000067" />
+
+## 🚀 향후 발전 방향 (Future Plans)
+
+### 접근성 강화
+- 음성 명령 기반 UI 도입
+- 시각장애인 지원 기능 추가
+
+### 서비스 확장
+- 요약 내용 도식화 기능
+- AI 학습 루틴 플래너 기능 도입
+
+### 서비스 협업
+- 타 과목(영어, 과학 등)으로 서비스 확장
+- B2B 유료화 모델 모색
 
 ---
 
-
-![image](https://github.com/user-attachments/assets/3125fb28-ef8e-4a19-bd3e-e892216d0c6c)
-
-
-
-
-## 📊 성능 평가 요약
-
-
-![image](https://github.com/user-attachments/assets/8e6ece50-af80-4f4e-bea4-286e1f8a617a)
-
-
-- **요약 모델 (ROUGE-L F1)**: 평균 0.68  
-- **문제 생성 정확도 (정답 일치율)**: 약 70%  
-- **TTS 안정성**: 전 테스트 케이스에서 정상 작동
-
----
-
-## 🧭 책임 있는 AI 적용 전략
-
-| 항목 | 실천 내용 |
-|------|-----------|
-| **투명성** | RAG 기반 출처 명시, API/DB 기록 추적 |
-| **공정성** | EBS 및 교육 콘텐츠 기반 데이터 구성 |
-| **책임성** | 사용자 피드백 기반 기능 개선 및 반복 테스트 |
-| **포용성** | TTS 속도/음성 스타일 선택 기능 제공 |
-| **보안 및 개인정보 보호** | Azure MySQL 최소 정보만 저장, 서버 내 처리 |
-
----
-
-## 🌱 향후 발전 방향
-
-- **TTS 고도화** 및 **음성 명령 기반 UI 도입**
-- **PWA + WebView 기반 모바일 앱** 개발
-- **요약 내용 시각화**, **AI 학습 플래너** 기능 추가
-- **오답노트 + 메모/태그 기능** 확장
-- **지속 가능한 교육 플랫폼**으로의 발전
-
----
-
-## 📬 팀 정보
-
-| 이름 | 역할 |
-|------|------|
-| 김용휘 | 팀장 / ML 설계 / 전체 총괄 |
-| 이소연 | 프론트엔드 총괄 |
-| 조은정 | 프론트엔드 개발
-| 배용석 | AI 요약 모델 구축 |
-| 이지혜 | TTS 및 UI 연동 |
-| 양태윤 | 데이터 수집 및 정제 |
-
-
----
-
-## 📝 참고사항
-
-- 본 프로젝트는 **Microsoft AI School** 교육 과정 내 팀 프로젝트로 제작되었습니다.
-- 비상업적 목적의 교육/연구용으로만 활용됩니다.
-
----
+> 📚 **한국사기꾼**으로 더 스마트하고 효율적인 한국사 학습을 경험해보세요!
